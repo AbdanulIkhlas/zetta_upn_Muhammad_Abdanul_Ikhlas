@@ -1,1 +1,0 @@
-# zetta_upn_Muhammad_Abdanul_Ikhlas
