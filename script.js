@@ -10,6 +10,7 @@ let buyBook = function (name, price, discount, tax, pay) {
     }
   };
   let changeMoney = pay - totalPrice;
+  let thanks = "Thank you for buying this book";
 
   console.log("Name book : " + name);
   console.log("Price book : Rp " + price);
@@ -26,7 +27,7 @@ let buyBook = function (name, price, discount, tax, pay) {
     if (pay > totalPrice) {
       console.log("The change : Rp " + changeMoney);
     }
-    console.log("\nThank you for buying this book");
+    console.log("\n" + thanks);
   } else {
     console.log("You can't buy this book because payment is not enough");
   }
