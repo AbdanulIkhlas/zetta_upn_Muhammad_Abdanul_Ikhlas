@@ -1,7 +1,7 @@
 let buyBook = function (name, price, discount, tax, pay) {
   const theTax = (tax / 100) * price;
-  let theDiscount = (discount / 100) * price;
-  let totalPrice = price - theDiscount + theTax;
+  const theDiscount = (discount / 100) * price;
+  const totalPrice = price - theDiscount + theTax;
   let canBuyBook = function (pay) {
     if (pay >= totalPrice) {
       return true;
