@@ -1,8 +1,7 @@
 let buyBook = function (name, price, discount, tax, pay, stock, amountOfBooks) {
   const theTax = (tax / 100) * price;
   const theDiscount = (discount / 100) * price;
-  const totalPrice = price - theDiscount + theTax;
-  const max = stock * 10;
+  let totalPrice = price - theDiscount + theTax;
   let canBuyBook = function (pay) {
     if (pay >= totalPrice) {
       return true;
@@ -10,7 +9,7 @@ let buyBook = function (name, price, discount, tax, pay, stock, amountOfBooks) {
       return false;
     }
   };
-  let changeMoney = pay - totalPrice;
+
   let thanks = "Thank you for buying this book";
 
   console.log("Name book : " + name);
@@ -21,30 +20,31 @@ let buyBook = function (name, price, discount, tax, pay, stock, amountOfBooks) {
   console.log("Price after discount is : Rp " + (price - theDiscount));
   console.log("the tax : " + tax + "% from the price -> Rp " + theTax);
   console.log("Price after adding tax is : Rp " + totalPrice);
-  console.log("So the total price to be paid is " + totalPrice);
-
-  // for (i = 0; i < max; i++) {
-  //   if (stock == 0) {
-  //     console.log("Book stock is running out");
-  //     break;
-  //   }
-  //   if (amountOfBooks <= stock) {
-  //     console.log("existing book stock : " + stock);
-  //     console.log("the number of books you want to buy : " + amountOfBooks);
-  //   } else {
-  //     console.log("insufficient stock of books!!");
-  //     i = max + 1;
-  //   }
-  // }
-
+  console.log("Amount of stock : " + stock);
+  console.log("Amount of purchase book : " + amountOfBooks);
+  let tempTotal = totalPrice;
+  totalPrice = 0;
+  for (i = 0; i < amountOfBooks; i++) {
+    if (stock <= 0) {
+      console.log("Amount of book is already out of stock!!!");
+      break;
+    } else {
+      stock--;
+      totalPrice += tempTotal;
+    }
+  }
+  let changeMoney = pay - totalPrice;
+  console.log("So, the total price to be paid is " + totalPrice);
   console.log("amount of money for payment : " + pay);
   if (canBuyBook(pay)) {
     console.log("You can buy this book");
     if (pay > totalPrice) {
       console.log("The change : Rp " + changeMoney);
     }
+    console.log("Remaining books : " + stock);
     console.log("\n" + thanks);
   } else {
+    console.log("Remaining books : " + stock);
     console.log("You can't buy this book because payment is not enough");
   }
 };
