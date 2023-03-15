@@ -27,6 +27,7 @@ let buyBook = function (name, price, discount, tax, pay, stock, amountOfBooks) {
   for (i = 0; i < amountOfBooks; i++) {
     if (stock <= 0) {
       console.log("Amount of book is already out of stock!!!");
+      console.log("You can only buy " + i + " books");
       break;
     } else {
       stock--;
