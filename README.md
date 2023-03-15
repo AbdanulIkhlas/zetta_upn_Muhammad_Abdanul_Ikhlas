@@ -6,4 +6,4 @@ Day 1
 * task git 3 : branch git_day_3
 
 Day 2
-* Task javascript 1 : branch javascript_day_1
+* Task javascript 1,2 & 3 : branch javascript_day_1
