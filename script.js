@@ -1,14 +1,15 @@
-let buyBook = function (name, price, discount, tax, pay, stock, amountOfBooks) {
+let buyBook = function (
+  name,
+  price,
+  discount,
+  tax,
+  stock,
+  amountOfBooks,
+  termOfCredit
+) {
   const theTax = (tax / 100) * price;
   const theDiscount = (discount / 100) * price;
   let totalPrice = price - theDiscount + theTax;
-  let canBuyBook = function (pay) {
-    if (pay >= totalPrice) {
-      return true;
-    } else {
-      return false;
-    }
-  };
 
   let thanks = "Thank you for buying this book";
 
@@ -24,7 +25,7 @@ let buyBook = function (name, price, discount, tax, pay, stock, amountOfBooks) {
   console.log("Amount of purchase book : " + amountOfBooks);
   let tempTotal = totalPrice;
   totalPrice = 0;
-  for (i = 0; i < amountOfBooks; i++) {
+  for (let i = 0; i < amountOfBooks; i++) {
     if (stock <= 0) {
       console.log("Amount of book is already out of stock!!!");
       console.log("You can only buy " + i + " books");
@@ -34,18 +35,20 @@ let buyBook = function (name, price, discount, tax, pay, stock, amountOfBooks) {
       totalPrice += tempTotal;
     }
   }
-  let changeMoney = pay - totalPrice;
-  console.log("So, the total price to be paid is " + totalPrice);
-  console.log("amount of money for payment : " + pay);
-  if (canBuyBook(pay)) {
-    console.log("You can buy this book");
-    if (pay > totalPrice) {
-      console.log("The change : Rp " + changeMoney);
-    }
-    console.log("Remaining books : " + stock);
-    console.log("\n" + thanks);
-  } else {
-    console.log("Remaining books : " + stock);
-    console.log("You can't buy this book because payment is not enough");
-  }
+  let monthlyFee = totalPrice / termOfCredit;
+  let arrayCreditDue = Array.from({ length: termOfCredit }, (value, i) => ({
+    month: i + 1,
+    amount: monthlyFee,
+  }));
+  console.log("The total price to be paid is " + totalPrice);
+  console.log("Monthly payment amount : Rp " + monthlyFee);
+  console.log("\nCredit Due : ");
+  arrayCreditDue.forEach((payment) => {
+    console.log(
+      "Payment amount for month " + payment.month + " is Rp " + payment.amount
+    );
+  });
+
+  console.log("Remaining books : " + stock);
+  console.log("\n" + thanks);
 };
