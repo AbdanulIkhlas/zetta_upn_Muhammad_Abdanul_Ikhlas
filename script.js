@@ -1,4 +1,5 @@
 let buyBook = function (name, price, discount, tax, pay) {
+  //! Calculate and assignt the parameter to variabel
   const theTax = (tax / 100) * price;
   const theDiscount = (discount / 100) * price;
   const totalPrice = price - theDiscount + theTax;
@@ -12,6 +13,7 @@ let buyBook = function (name, price, discount, tax, pay) {
   let changeMoney = pay - totalPrice;
   let thanks = "Thank you for buying this book";
 
+  //! Display
   console.log("Name book : " + name);
   console.log("Price book : Rp " + price);
   console.log(
