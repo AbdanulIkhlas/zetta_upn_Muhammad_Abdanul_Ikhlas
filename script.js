@@ -7,12 +7,13 @@ let buyBook = function (
   amountOfBooks,
   termOfCredit
 ) {
+  //! calculate and assignt parameter to variabel
   const theTax = (tax / 100) * price;
   const theDiscount = (discount / 100) * price;
   let totalPrice = price - theDiscount + theTax;
-
   let thanks = "Thank you for buying this book";
 
+  //! display
   console.log("Name book : " + name);
   console.log("Price book : Rp " + price);
   console.log(
@@ -23,6 +24,8 @@ let buyBook = function (
   console.log("Price after adding tax is : Rp " + totalPrice);
   console.log("Amount of stock : " + stock);
   console.log("Amount of purchase book : " + amountOfBooks);
+
+  //! Calculate the price based on the number of books purchased
   let tempTotal = totalPrice;
   totalPrice = 0;
   for (let i = 0; i < amountOfBooks; i++) {
@@ -35,11 +38,17 @@ let buyBook = function (
       totalPrice += tempTotal;
     }
   }
+
+  //! initialization montly fee
   let monthlyFee = totalPrice / termOfCredit;
+
+  //! initialization credit due with array object
   let arrayCreditDue = Array.from({ length: termOfCredit }, (value, i) => ({
     month: i + 1,
     amount: monthlyFee,
   }));
+
+  //! display
   console.log("The total price to be paid is " + totalPrice);
   console.log("Monthly payment amount : Rp " + monthlyFee);
   console.log("\nCredit Due : ");
