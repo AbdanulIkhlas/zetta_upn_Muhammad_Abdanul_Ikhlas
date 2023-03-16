@@ -1,4 +1,5 @@
 let buyBook = function (name, price, discount, tax, pay, stock, amountOfBooks) {
+  //! Calculate and assingt parameter to variabel
   const theTax = (tax / 100) * price;
   const theDiscount = (discount / 100) * price;
   let totalPrice = price - theDiscount + theTax;
@@ -12,6 +13,7 @@ let buyBook = function (name, price, discount, tax, pay, stock, amountOfBooks) {
 
   let thanks = "Thank you for buying this book";
 
+  //! display
   console.log("Name book : " + name);
   console.log("Price book : Rp " + price);
   console.log(
@@ -22,6 +24,8 @@ let buyBook = function (name, price, discount, tax, pay, stock, amountOfBooks) {
   console.log("Price after adding tax is : Rp " + totalPrice);
   console.log("Amount of stock : " + stock);
   console.log("Amount of purchase book : " + amountOfBooks);
+
+  //! Calculate the price based on the number of books purchased
   let tempTotal = totalPrice;
   totalPrice = 0;
   for (i = 0; i < amountOfBooks; i++) {
@@ -35,6 +39,8 @@ let buyBook = function (name, price, discount, tax, pay, stock, amountOfBooks) {
     }
   }
   let changeMoney = pay - totalPrice;
+
+  //! Display
   console.log("So, the total price to be paid is " + totalPrice);
   console.log("amount of money for payment : " + pay);
   if (canBuyBook(pay)) {
