@@ -43,7 +43,7 @@ let buyBook = function (
   let monthlyFee = totalPrice / termOfCredit;
 
   //! initialization credit due with array object
-  let arrayCreditDue = Array.from({ length: termOfCredit }, (value, i) => ({
+  let arrayCreditDue = Array.from({ length: termOfCredit }, (i) => ({
     month: i + 1,
     amount: monthlyFee,
   }));
