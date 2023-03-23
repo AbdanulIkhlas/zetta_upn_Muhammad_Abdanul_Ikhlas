@@ -1,0 +1,10 @@
+{
+    "name": "The Lord of the Rings",
+    "price": 150000,
+    "discount": 10,
+    "tax": 10,
+    "stock": 5,
+    "amountOfBooks": 3,
+    "termOfCredit": 3
+}
+  
