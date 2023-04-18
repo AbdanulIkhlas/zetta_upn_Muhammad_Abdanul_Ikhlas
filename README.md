@@ -10,3 +10,6 @@
 * [x] Task javascript 2 : branch [javascript_day_2](https://github.com/AbdanulIkhlas/zetta_upn_Muhammad_Abdanul_Ikhlas/tree/javascript_day_2)
 * [x] Task javascript 3 : branch [javascript_day_3](https://github.com/AbdanulIkhlas/zetta_upn_Muhammad_Abdanul_Ikhlas/tree/javascript_day_3)
 * [ ] Task javascript 4 : branch [javascript_day_4](https://github.com/AbdanulIkhlas/zetta_upn_Muhammad_Abdanul_Ikhlas/tree/javascript_day_4)
+* [ ] Task javascript 5 : branch [javascript_day_4](https://github.com/AbdanulIkhlas/zetta_upn_Muhammad_Abdanul_Ikhlas/tree/javascript_day_5)
+* [ ] Task javascript 6 : branch [javascript_day_4](https://github.com/AbdanulIkhlas/zetta_upn_Muhammad_Abdanul_Ikhlas/tree/javascript_day_6)
+* [ ] Task javascript 7 : branch [javascript_day_4](https://github.com/AbdanulIkhlas/zetta_upn_Muhammad_Abdanul_Ikhlas/tree/javascript_day_7)
